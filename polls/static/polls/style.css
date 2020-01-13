@@ -8,10 +8,10 @@ body {
 
 /* Handles background image size and position*/
 .backgroundImage {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 50%;
-    background-image: url("images/background.gif");
+    background: url("images/background.jpeg") no-repeat;
     background-size: 100%;
     top: 0;
     left: 25%;
