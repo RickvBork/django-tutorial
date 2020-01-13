@@ -1,0 +1,22 @@
+<!--Generates the absolute URL of static files.-->
+{% load static %}
+
+<!-- Link to the stylesheet using the static url-->
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+
+        <!--References detail url from polls.urls, links to a new page /polls/'number'-->
+        <!--This method doesn't require hard coded ulrs, thus removes the reliance on specific urls defined in the url configurations-->
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+<!-- Background Image-->
+<div class="backgroundImage">
+</div>
